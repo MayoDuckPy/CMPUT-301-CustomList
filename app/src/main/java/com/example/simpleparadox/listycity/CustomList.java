@@ -86,6 +86,15 @@ public class CustomList extends ArrayAdapter<City> {
      * @param city
      */
     public void deleteCity(City city) {
-        return;
+        City currentCity;
+        for (int i = 0; i < cities.size(); i++) {
+            currentCity = cities.get(i);
+            if (currentCity.getCityName() == city.getCityName()
+                    && currentCity.getProvinceName() == city.getProvinceName()) {
+
+                cities.remove(i);
+                return;
+            }
+        }
    }
 }
